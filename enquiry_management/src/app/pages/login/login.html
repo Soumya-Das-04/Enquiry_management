@@ -1,0 +1,86 @@
+<div class="login-page">
+  <div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="col-xl-10 col-lg-11">
+        <div class="card login-card shadow-lg border-0 overflow-hidden">
+          <div class="row g-0">
+            <div class="col-md-6 d-none d-md-block">
+              <div class="brand-panel h-100 p-4 p-xl-5">
+                <div class="brand-header mb-4">
+                  <span class="brand-badge">EM</span>
+                  <span class="brand-title">Enquiry Management</span>
+                </div>
+
+                <div class="brand-copy">
+                  <h2>Welcome back, Admin</h2>
+                  <p>
+                    Manage customer enquiries efficiently and respond to every request with clarity
+                    and speed.
+                  </p>
+                </div>
+
+                <ul class="feature-list">
+                  <li>Track incoming inquiries</li>
+                  <li>Update enquiry status in real time</li>
+                  <li>Review customer records securely</li>
+                </ul>
+
+                <div class="brand-footer">
+                  <small>Secure admin access portal</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-panel p-4 p-xl-5">
+                <div class="text-center mb-4">
+                  <div class="login-icon">🔒</div>
+                  <h1>Admin Login</h1>
+                  <p class="subtitle">Sign in to continue to your dashboard</p>
+                </div>
+
+                <form>
+                  <div class="mb-3">
+                    <label class="form-label" for="email">Email address</label>
+                    <input
+                      id="email"
+                      [(ngModel)]="userLogin.userName"
+                      name="userName"
+                      type="email"
+                      class="form-control form-control-lg"
+                      placeholder="admin@company.com"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label" for="password">Password</label>
+                    <input
+                      id="password"
+                      [(ngModel)]="userLogin.password"
+                      name="password"
+                      type="password"
+                      class="form-control form-control-lg"
+                      placeholder="Enter password"
+                    />
+                  </div>
+
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="rememberMe" />
+                      <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-lg w-100" (click)="onLogin()">
+                    Login
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

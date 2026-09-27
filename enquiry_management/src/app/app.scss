@@ -1,0 +1,26 @@
+.navbar {
+  padding: 0.85rem 1rem;
+}
+
+.navbar-brand {
+  letter-spacing: 0.04rem;
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 8px;
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.page-content {
+  min-height: calc(100vh - 76px);
+}

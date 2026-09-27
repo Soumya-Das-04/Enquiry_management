@@ -1,5 +1,6 @@
-import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Common } from './services/common';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,26 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('enquiry_management');
+
+  loggedUserName: string = '';
+
+  commonSr = inject(Common);
+
+  constructor() {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      this.readLoggedUserData();
+      this.commonSr.$onLogin.subscribe({
+        next: () => {
+          this.readLoggedUserData();
+        },
+      });
+    }
+  }
+
+  readLoggedUserData() {
+    const storedUserName = window.localStorage.getItem('enquiryApp');
+    if (storedUserName) {
+      this.loggedUserName = storedUserName;
+    }
+  }
 }
