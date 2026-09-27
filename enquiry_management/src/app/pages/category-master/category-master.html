@@ -1,1 +1,88 @@
-<p>category-master works!</p>
+<div class="category-page container-fluid py-4">
+  <div class="row g-4">
+    <div class="col-lg-7">
+      <div class="card border-0 shadow-sm category-card warning-card">
+        <div class="card-header bg-warning text-dark fw-bold border-0">Category List</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Category Name</th>
+                  <th>Status</th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (item of categoryList(); track $index) {
+                  <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ item.categoryName }}</td>
+                    <td>
+                      @if (item.isActive) {
+                        <span class="badge text-bg-success">Active</span>
+                      } else {
+                        <span class="badge text-bg-secondary">Inactive</span>
+                      }
+                    </td>
+                    <td class="text-center">
+                      <button type="button" class="btn btn-sm btn-outline-primary me-2">
+                        Edit
+                      </button>
+                      <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="card border-0 shadow-sm category-card warning-card">
+        <div class="card-header bg-warning text-dark fw-bold border-0">Add / Edit Category</div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="categoryId" class="form-label fw-semibold">Category ID</label>
+              <input id="categoryId" type="number" class="form-control" value="0" />
+            </div>
+
+            <div class="mb-3">
+              <label for="categoryName" class="form-label fw-semibold">Category Name</label>
+              <input
+                id="categoryName"
+                [(ngModel)]="newCategoryObj.categoryName"
+                name="newCategoryObj.categoryName"
+                type="text"
+                class="form-control"
+                placeholder="Enter category name"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold d-block">Status</label>
+              <div class="form-check form-switch mt-2">
+                <input
+                  class="form-check-input"
+                  [(ngModel)]="newCategoryObj.isActive"
+                  type="checkbox"
+                  id="isActive"
+                />
+                <label class="form-check-label" for="isActive">Active</label>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2">
+              <button type="submit" (click)="onSaveCategory()" class="btn btn-success">Save</button>
+              <button type="reset" class="btn btn-outline-secondary">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.category-page {
+  min-height: calc(100vh - 76px);
+  background: #fff8e1;
+}
+
+.warning-card {
+  background: linear-gradient(180deg, #fff9e8 0%, #fff4d6 100%);
+  border-radius: 16px;
+}
+
+.warning-card .card-header {
+  border-radius: 16px 16px 0 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.02rem;
+}
+
+.warning-card .card-body {
+  padding: 1.25rem;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.form-control,
+.form-check-input {
+  border-radius: 10px;
+}
+
+.btn {
+  border-radius: 10px;
+}
