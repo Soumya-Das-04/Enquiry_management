@@ -15,25 +15,28 @@
     </button>
 
     <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto align-items-center">
+      <ul class="navbar-nav me-auto align-items-center">
         <li class="nav-item">
-          <a class="nav-link active" href="/home">New Enquiry</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link active" routerLink="/home">New Enquiry</a>
         </li>
 
         @if (loggedUserName) {
           <li class="nav-item">
-            <a class="nav-link" href="/status">Status Master</a>
+            <a class="nav-link" routerLink="/status">Status Master</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/category">Category</a>
+            <a class="nav-link" routerLink="/category">Category</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/enquiry-list">Enquiry List</a>
+            <a class="nav-link" routerLink="/enquiry-list">Enquiry List</a>
           </li>
         }
+      </ul>
+
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item login-item">
+          <a class="nav-link login-link" routerLink="/login">Login</a>
+        </li>
       </ul>
     </div>
   </div>

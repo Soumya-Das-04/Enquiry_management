@@ -21,6 +21,23 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
+.login-item {
+  margin-left: 0.5rem;
+}
+
+.login-link {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.55rem 1.15rem !important;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.login-link:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
 .page-content {
   min-height: calc(100vh - 76px);
 }
