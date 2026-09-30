@@ -17,25 +17,55 @@
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav me-auto align-items-center">
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/home">New Enquiry</a>
+          <a
+            class="nav-link"
+            routerLink="/home"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >New Enquiry</a
+          >
         </li>
 
         @if (loggedUserName) {
           <li class="nav-item">
-            <a class="nav-link" routerLink="/status">Status Master</a>
+            <a
+              class="nav-link"
+              routerLink="/status"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Status Master</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/category">Category</a>
+            <a
+              class="nav-link"
+              routerLink="/category"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Category</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/enquiry-list">Enquiry List</a>
+            <a
+              class="nav-link"
+              routerLink="/enquiry-list"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Enquiry List</a
+            >
           </li>
         }
       </ul>
 
       <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item login-item">
-          <a class="nav-link login-link" routerLink="/login">Login</a>
+          <a
+            class="nav-link login-link"
+            routerLink="/login"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Login</a
+          >
         </li>
       </ul>
     </div>

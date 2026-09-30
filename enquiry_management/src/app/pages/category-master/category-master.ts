@@ -43,9 +43,46 @@ export class CategoryMaster implements OnInit {
           if (response && response.result) {
             alert('Category Created successfully!');
             this.getAllCategories();
-            this.newCategoryObj = { categoryId: 0, categoryName: '', isActive: false };
           } else {
             alert(response.message || 'Failed to create category.');
+          }
+        },
+      });
+  }
+
+  onEditCategory(category: ICategory) {
+    this.newCategoryObj = { ...category };
+  }
+
+  onUpdateCategory() {
+    this.http
+      .put(
+        'https://api.freeprojectapi.com/api/Enquiry/update-category/' +
+          this.newCategoryObj.categoryId,
+        this.newCategoryObj,
+      )
+      .subscribe({
+        next: (response: any) => {
+          if (response && response.result) {
+            alert('Category Updated successfully!');
+            this.getAllCategories();
+          } else {
+            alert(response.message || 'Failed to update category.');
+          }
+        },
+      });
+  }
+
+  onDeleteCategory(categoryID: number) {
+    this.http
+      .delete('https://api.freeprojectapi.com/api/Enquiry/delete-category/' + categoryID)
+      .subscribe({
+        next: (response: any) => {
+          if (response && response.result) {
+            alert('Category Deleted successfully!');
+            this.getAllCategories();
+          } else {
+            alert(response.message || 'Failed to delete category.');
           }
         },
       });
