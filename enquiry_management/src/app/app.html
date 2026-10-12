@@ -1,6 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold" href="#">Enquiry Management</a>
+    <a
+      class="btn btn-outline-light btn-sm ms-2 me-auto"
+      routerLink="/search-functionality"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >SearchFunctionality</a
+    >
 
     <button
       class="navbar-toggler"
@@ -25,7 +32,6 @@
             >New Enquiry</a
           >
         </li>
-
         @if (loggedUserName) {
           <li class="nav-item">
             <a

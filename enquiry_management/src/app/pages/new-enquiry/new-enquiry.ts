@@ -1,9 +1,9 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { form } from '@angular/forms/signals';
+import { form, FormField } from '@angular/forms/signals';
 import { Enquiry } from '../../services/enquiry';
 
 @Component({
-  imports: [],
+  imports: [FormField],
   selector: 'app-new-enquiry',
   styleUrl: './new-enquiry.scss',
   templateUrl: './new-enquiry.html',
@@ -15,7 +15,7 @@ export class NewEnquiry implements OnInit {
     customerEmail: '',
     customerPhone: '',
     message: '',
-    categoryId: 0,
+    categoryId: '',
     statusId: 357,
     enquiryType: '',
     isConverted: true,
@@ -44,7 +44,19 @@ export class NewEnquiry implements OnInit {
   onSaveEnquiry(event: Event) {
     event.preventDefault();
     console.log('inside onSaveEnquiry');
-    const formValue = this.enquiryForm().value();
+    const values = this.enquiryForm().value();
+    if (
+      !values.customerName.trim() ||
+      !values.customerEmail.trim() ||
+      !values.customerPhone.trim() ||
+      !values.categoryId ||
+      !values.message.trim()
+    ) {
+      alert('Please complete all required fields.');
+      return;
+    }
+
+    const formValue = { ...values, categoryId: Number(values.categoryId) };
     this.enquiryService.saveNewEnquiry(formValue).subscribe({
       next: (res: any) => {
         if (res.result) {

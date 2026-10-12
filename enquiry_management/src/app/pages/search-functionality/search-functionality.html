@@ -1,0 +1,88 @@
+<main class="container py-4">
+  <section class="card border-0 shadow-sm">
+    <div class="card-header bg-warning text-dark border-0 py-3">
+      <h1 class="h4 fw-bold mb-0">Search Enquiries</h1>
+    </div>
+
+    <div class="card-body p-4">
+      <label for="enquirySearch" class="form-label fw-semibold">Search enquiries</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text" aria-hidden="true">Search</span>
+        <input
+          id="enquirySearch"
+          type="search"
+          class="form-control"
+          placeholder="Search by name, email, phone, message, category, status, or ID"
+          aria-describedby="searchHelp"
+          [value]="searchQuery()"
+          (input)="onSearch($event)"
+        />
+        @if (searchQuery()) {
+          <button type="button" class="btn btn-outline-secondary" (click)="clearSearch()">
+            Clear
+          </button>
+        }
+      </div>
+      <p id="searchHelp" class="form-text mb-4">
+        Search matches enquiry details as you type. This page uses standalone sample data.
+      </p>
+
+      <app-shared-search-display />
+
+      @if (isLoading()) {
+        <p class="text-secondary mb-0" role="status">Loading sample enquiries...</p>
+      } @else if (loadError()) {
+        <div class="alert alert-danger mb-0" role="alert">{{ loadError() }}</div>
+      } @else if (filteredEnquiries().length === 0) {
+        <div class="alert alert-light border mb-0" role="status">
+          @if (searchQuery()) {
+            No enquiries match "{{ searchQuery() }}".
+          } @else {
+            No sample enquiries are available.
+          }
+        </div>
+      } @else {
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h6 fw-semibold mb-0">Search results</h2>
+          <span class="badge text-bg-secondary">
+            {{ filteredEnquiries().length }}
+            {{ filteredEnquiries().length === 1 ? 'result' : 'results' }}
+          </span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Message</th>
+                <th scope="col">Category</th>
+                <th scope="col">Status</th>
+                <th scope="col">Type</th>
+                <th scope="col">Enquiry Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (enquiry of filteredEnquiries(); track enquiry.enquiryId) {
+                <tr>
+                  <td>#{{ enquiry.enquiryId }}</td>
+                  <td>
+                    <div class="fw-semibold">{{ enquiry.customerName }}</div>
+                    <a [href]="'mailto:' + enquiry.customerEmail">{{ enquiry.customerEmail }}</a>
+                    <div class="small text-secondary">{{ enquiry.customerPhone }}</div>
+                  </td>
+                  <td>{{ enquiry.message }}</td>
+                  <td>{{ enquiry.categoryName }}</td>
+                  <td>{{ enquiry.statusName }}</td>
+                  <td>{{ enquiry.enquiryType }}</td>
+                  <td>{{ enquiry.enquiryDate | date: 'mediumDate' }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+    </div>
+  </section>
+</main>

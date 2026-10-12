@@ -1,0 +1,11 @@
+<aside class="alert alert-info mb-4" aria-live="polite">
+  <h2 class="h6 fw-semibold">Independent component receiving shared data</h2>
+  <p class="mb-1">
+    This component gets the search text by subscribing to the service's
+    <code>BehaviorSubject</code>. It does not receive an input from the search component.
+  </p>
+  <p class="mb-0">
+    Shared search text:
+    <strong>{{ (sharedSearchQuery$ | async) || 'No search text entered' }}</strong>
+  </p>
+</aside>

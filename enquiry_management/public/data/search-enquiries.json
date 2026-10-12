@@ -1,0 +1,68 @@
+[
+  {
+    "enquiryId": 1001,
+    "customerName": "Alex Morgan",
+    "customerEmail": "alex.morgan@example.com",
+    "customerPhone": "+1 555-0101",
+    "message": "Interested in the premium support plan.",
+    "categoryName": "Support",
+    "statusName": "Open",
+    "enquiryType": "Website",
+    "enquiryDate": "2026-09-18T09:30:00Z"
+  },
+  {
+    "enquiryId": 1002,
+    "customerName": "Priya Sharma",
+    "customerEmail": "priya.sharma@example.com",
+    "customerPhone": "+1 555-0102",
+    "message": "Would like pricing details for a team subscription.",
+    "categoryName": "Sales",
+    "statusName": "In Progress",
+    "enquiryType": "Email",
+    "enquiryDate": "2026-09-22T14:15:00Z"
+  },
+  {
+    "enquiryId": 1003,
+    "customerName": "Jordan Lee",
+    "customerEmail": "jordan.lee@example.com",
+    "customerPhone": "+1 555-0103",
+    "message": "The account setup link is not working.",
+    "categoryName": "Technical",
+    "statusName": "Open",
+    "enquiryType": "Phone",
+    "enquiryDate": "2026-09-25T11:00:00Z"
+  },
+  {
+    "enquiryId": 1004,
+    "customerName": "Sofia Garcia",
+    "customerEmail": "sofia.garcia@example.com",
+    "customerPhone": "+1 555-0104",
+    "message": "Thank you, the issue has been resolved.",
+    "categoryName": "Support",
+    "statusName": "Closed",
+    "enquiryType": "Website",
+    "enquiryDate": "2026-10-01T08:45:00Z"
+  },
+  {
+    "enquiryId": 1005,
+    "customerName": "Noah Patel",
+    "customerEmail": "noah.patel@example.com",
+    "customerPhone": "+1 555-0105",
+    "message": "Requesting a product demonstration for our team.",
+    "categoryName": "Sales",
+    "statusName": "New",
+    "enquiryType": "Referral",
+    "enquiryDate": "2026-10-04T16:20:00Z"
+  },
+  {
+    "enquiryId": 1006,
+    "customerName": "Mia Chen",
+    "customerEmail": "mia.chen@example.com",
+    "customerPhone": "+1 555-0106",
+    "message": "Please help update the billing contact.",
+    "categoryName": "Billing",
+    "statusName": "In Progress",
+    "enquiryType": "Email",
+    "enquiryDate": "2026-10-08T12:10:00Z"
+  }
+]

@@ -4,6 +4,7 @@ import { StatusMaster } from './pages/status-master/status-master';
 import { CategoryMaster } from './pages/category-master/category-master';
 import { EnquiryList } from './pages/enquiry-list/enquiry-list';
 import { Login } from './pages/login/login';
+import { SearchFunctionality } from './pages/search-functionality/search-functionality';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -12,4 +13,5 @@ export const routes: Routes = [
   { path: 'status', component: StatusMaster },
   { path: 'category', component: CategoryMaster },
   { path: 'enquiry-list', component: EnquiryList },
+  { path: 'search-functionality', component: SearchFunctionality },
 ];

@@ -14,11 +14,10 @@
             <input
               id="customerName"
               [formField]="enquiryForm.customerName"
-              name="customerName"
               type="text"
               class="form-control"
               autocomplete="name"
-              required
+              aria-required="true"
             />
           </div>
 
@@ -27,11 +26,10 @@
             <input
               id="customerEmail"
               [formField]="enquiryForm.customerEmail"
-              name="customerEmail"
               type="email"
               class="form-control"
               autocomplete="email"
-              required
+              aria-required="true"
             />
           </div>
 
@@ -40,11 +38,10 @@
             <input
               id="customerPhone"
               [formField]="enquiryForm.customerPhone"
-              name="customerPhone"
               type="tel"
               class="form-control"
               autocomplete="tel"
-              required
+              aria-required="true"
             />
           </div>
 
@@ -53,9 +50,8 @@
             <select
               id="categoryId"
               [formField]="enquiryForm.categoryId"
-              name="categoryId"
               class="form-control"
-              required
+              aria-required="true"
             >
               <option value="">Select Category</option>
               @for (category of categoryList(); track $index) {
@@ -69,10 +65,9 @@
             <textarea
               id="message"
               [formField]="enquiryForm.message"
-              name="message"
               class="form-control"
               rows="3"
-              required
+              aria-required="true"
             ></textarea>
           </div>
 
