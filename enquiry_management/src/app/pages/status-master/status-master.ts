@@ -54,4 +54,12 @@ export class StatusMaster implements OnInit {
       },
     });
   }
+
+  onEditStatus(data: StatusModel) {
+    this.statusForm.setValue(data);
+  }
+
+  onResetForm() {
+    this.statusForm.reset();
+  }
 }
